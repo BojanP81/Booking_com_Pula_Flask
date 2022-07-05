@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Booking.com prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+  <div class="login">
+	<h1>Predict Booking.com price for apartment in Pula</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+    	<input type="text" name="Review_Score" placeholder="Review Score" required="required" />
+        <input type="text" name="Number_Of_Reviews" placeholder="Number Of Reviews" required="required" />
+		<input type="text" name="App_area_sqm" placeholder="App area sqm" required="required" />
+        <input type="text" name="Dist_center_km" placeholder="Dist center km" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+   <br>
+   <br>
+     <h6>Note: Predicted prices are for 2 persons, 6 nights, 1.8.- 7.8.</h6>
+  </div>
+
+
+</body>
