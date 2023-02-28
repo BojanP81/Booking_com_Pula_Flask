@@ -1,0 +1,1 @@
+This is my personal machine learning project written in the Flask framework for learning purposes. This application calculates the price of an apartment based on 4 independent variables for a specific period from which the data originates.
